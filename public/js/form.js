@@ -96,7 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(duplicateCheck)
 
             if(duplicateCheck && duplicateCheck.datasetExists){
-                message = `⚠️ Record with same dataset title already exists. You can access it here: <a href="https://data.stage.qdr.org/dataset.xhtml?persistentId=${duplicateCheck.persistentId}" target="_blank">${duplicateCheck.persistentId}</a>`
+                message = `⚠️ Record with same dataset title already exists. You can access it here: <a href="https://demo.dataverse.org/dataset.xhtml?persistentId=${duplicateCheck.persistentId}" target="_blank">${duplicateCheck.persistentId}</a>`
                 formSubmitted = false
             }else{
                 const convertToDataverse = await healToDataverse(healData);

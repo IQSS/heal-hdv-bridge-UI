@@ -1,11 +1,11 @@
 # heal-qdr-bridge-UI
-User Interface based platform that helps pull data from heal and push to QDR. 
+User Interface based platform that helps pull data from heal and push to Dataverse instances. 
 
 ## 🚀 Features
 
 - Simple form-based UI to collect user input
 - Integration with HEAL API for metadata retrieval
-- Support for pushing datasets to QDR Dataverse
+- Support for pushing datasets to a Dataverse
 - Responsive, user-friendly interface
 
 ## 🛠️ Installation
@@ -59,8 +59,9 @@ Destination - Dataverse and prompt to supply user's account API Key
 
 ### Environments
 
-1. **Stage Environment (Testing)**:  
-   For testing purposes, you can use the [QDR Stage site](https://data.stage.qdr.org/).
+1. **Stage Environment (Testing)**:
+   For testing purposes, you can use the [Demo Dataverse site](https://demo.dataverse.org/). or 
+   the [QDR Stage site](https://data.stage.qdr.org/).
    
 2. **Main Dataverse Environment**:  
    For production use, please generate an API token from the [QDR Main site](https://qdr.syr.edu/).
@@ -68,7 +69,7 @@ Destination - Dataverse and prompt to supply user's account API Key
 
 ### Config
 
-Base URL's for Heal and QDR are fetched based on the environment.
+Base URL's for Heal and Dataverse are fetched based on the environment.
 js > config.js checks for environment based on the hostname of the site and based on that we call the object from dev.js or prod.js
 
 Refer Obtaining Your QDR API Token section from [docs](https://qdr.syr.edu/ati/anno-rep/logging-anno-rep-detailed-instructions)
@@ -80,7 +81,7 @@ Refer Obtaining Your QDR API Token section from [docs](https://qdr.syr.edu/ati/a
 |-------------------|----------|----------|-------------|
 | `Select Source`   | string   | ✅       | For now only source available is `"HEAL Dataset"`. |
 | `Select Data Type`| string / file   | ✅       | Must be `"Project ID"` if fetching from HEAL, or `"JSON File"` to upload a local JSON of study level metadata. |
-| `Select Destination`| string  | ✅  | For now only source available is `"Dataverse - QDR"`. |
+| `Select Destination`| string  | ✅  | For now only source available is `"Dataverse - Demo"`. |
 | `Enter API Key`          | string   | ✅       | A valid QDR Dataverse API key for authentication and upload. |
 
 ### 📤 How It Works:

@@ -20,7 +20,7 @@ export async function uploadToDataverse(dataverseJSON, apiKey){
             case 201:
                 const uploadData = await uploadRes.json();
                 const persistentId = uploadData.data?.persistentId;
-                message = `✅ Success! Your data has been pushed to QDR. You can access it here: <a href="https://data.stage.qdr.org/dataset.xhtml?persistentId=${persistentId}" target="_blank">${persistentId}</a>`;
+                message = `✅ Success! Your data has been pushed to the Demo Dataverse. You can access it here: <a href="https://demo.dataverse.org/dataset.xhtml?persistentId=${persistentId}" target="_blank">${persistentId}</a>`;
                 break;
             case 400:
                 message = "⚠️ Bad Request: Your input data might be incorrect.";
@@ -39,7 +39,7 @@ export async function uploadToDataverse(dataverseJSON, apiKey){
                 break;
             default:
                 const response = await uploadRes.json();
-                message = `❌ Unexpected error (Status ${status}): ${response || "Please contact <a mailto:'qdr@syr.edu'> support</a>. "}`;
+                message = `❌ Unexpected error (Status ${status}): ${response || "Please contact <a mailto:'support@dataverse.org'> support</a>. "}`;
             }
 
     return message;
